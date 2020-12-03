@@ -11,9 +11,6 @@ const StyledHome = styled.div`
 export const Home = () => {
   return (
     <StyledHome>
-      <div>
-        top navbar
-      </div>
       <Banner />
       <Explanation />
       <Gallery />
