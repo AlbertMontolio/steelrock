@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { Banner } from './banner/Banner'
 import { Explanation } from './explanation/Explanation'
+import { Gallery } from './gallery/Gallery'
 
 const StyledHome = styled.div`
-  background-color: orange;
 `
 
 export const Home = () => {
   return (
     <StyledHome>
       <div>
-        Home
+        top navbar
       </div>
+      <Banner />
       <Explanation />
+      <Gallery />
       <div>
         Footer
       </div>
