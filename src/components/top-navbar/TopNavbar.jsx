@@ -8,6 +8,8 @@ const StyledTopNavbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 30px;
+  height: 60px;
 `
 
 const IconWrapper = styled.div`
@@ -15,13 +17,14 @@ const IconWrapper = styled.div`
 `
 
 const Links = styled.div`
-  height: 60px;
   display: flex;
   align-items: center;
 `
 
 const Link = styled(NavLink)`
   margin-left: 30px;
+  color: black;
+  text-decoration: none;
 `
 
 export const TopNavbar = () => {

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Banner } from './banner/Banner'
 import { Explanation } from './explanation/Explanation'
 import { Blurry } from './blurry/Blurry'
+import { Footer } from '../../components/footer/Footer'
 
 const StyledHome = styled.div`
 `
@@ -14,9 +15,7 @@ export const Home = () => {
       <Banner />
       <Explanation />
       <Blurry />
-      <div>
-        Footer
-      </div>
+      <Footer />
     </StyledHome>
   )
 }
