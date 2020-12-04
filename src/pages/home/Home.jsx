@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Banner } from './banner/Banner'
 import { Explanation } from './explanation/Explanation'
-import { Gallery } from './gallery/Gallery'
+import { Blurry } from './blurry/Blurry'
 
 const StyledHome = styled.div`
 `
@@ -13,7 +13,7 @@ export const Home = () => {
     <StyledHome>
       <Banner />
       <Explanation />
-      <Gallery />
+      <Blurry />
       <div>
         Footer
       </div>

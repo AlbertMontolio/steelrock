@@ -15,7 +15,7 @@ const IconWrapper = styled.div`
 `
 
 const Links = styled.div`
-  padding: 20px;
+  height: 60px;
   display: flex;
   align-items: center;
 `

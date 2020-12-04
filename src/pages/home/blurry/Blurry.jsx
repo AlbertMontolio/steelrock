@@ -1,33 +1,45 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import BlurryImg from '../../../images/hamburg.jpg'
+
 const StyledGallery = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  background-color: orange;
+  background-image: url(${BlurryImg});
+  background-size: 100% auto;
+  height: 80vh;
+  position: relative;
 `
 
 const Left = styled.div`
   color: white;
-  width: 300px;
-  background-color: #083D77;
+  width: 50%;
+  background-color: rgb(8,61,119, 0.7);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const StyledText = styled.div`
-  padding: 10px;
+  padding: 40px;
+  padding-bottom: 0px;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 20px;
 `
 const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 40px 0px;
+  margin-bottom: 40px;
 `
 const StyledIcon = styled.div`
-
 `
 
-export const Gallery = () => {
+export const Blurry = () => {
   return (
     <StyledGallery>
       <Left>

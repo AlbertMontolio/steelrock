@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
 const StyledExplanation = styled.div`
+  margin-bottom: 60px;
 `
 
 const Header = styled.div`
@@ -30,6 +32,7 @@ const Text = styled.div`
   padding: 10px;
   width: 400px;
   line-height: 1.5;
+  font-size: 20px;
 `
 
 export const Explanation = () => {
