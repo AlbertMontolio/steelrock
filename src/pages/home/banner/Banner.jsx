@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import SolarImg from '../../../images/solar.jpg'
+import SolarImg from '../../../images/banner.jpg'
 
 const StyledBanner = styled.div`
   background-image: url(${SolarImg});
