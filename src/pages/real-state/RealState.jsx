@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import CraneImg from '../../images/crane.jpg'
 
 const StyledRealState = styled.div`
-
 `
 
 const StyledBanner = styled.div`
