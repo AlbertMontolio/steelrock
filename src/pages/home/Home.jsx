@@ -14,7 +14,6 @@ export const Home = () => {
       <Banner />
       <Explanation />
       <Blurry />
-      <Footer />
     </StyledHome>
   )
 }
