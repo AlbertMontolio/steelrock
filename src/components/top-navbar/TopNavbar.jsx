@@ -16,7 +16,6 @@ const StyledTopNavbar = styled.div`
 `
 
 const IconWrapper = styled.div`
-
 `
 
 const Links = styled.div`
@@ -36,10 +35,10 @@ const Language = styled.div`
 `
 
 export const TopNavbar = () => {
-  const { locale, setLocale } = useLang()
-  console.log('TopNavbar lang', locale)
+  const { setLocale } = useLang()
   return (
     <StyledTopNavbar>
+      
       <IconWrapper>
         icon
       </IconWrapper>
