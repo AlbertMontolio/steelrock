@@ -1,24 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
+import { useMediaQuery } from 'react-responsive'
 
 const StyledExplanation = styled.div`
   margin-bottom: 60px;
-`
-
-const Header = styled.div`
-  padding: 10px;
-  display: flex;
-  align-items: center;
+  padding: 0px ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '300px' : '20px'};
 `
 
 const Company = styled.div`
   font-weight: bold;
   color: #083D77;
-`
-
-const About = styled.div`
-
+  margin-bottom: 20px;
+  font-size: 24px;
 `
 
 const TextWrapper = styled.div`
@@ -29,23 +23,20 @@ const TextWrapper = styled.div`
 `
 
 const Text = styled.div`
-  padding: 10px;
-  width: 400px;
   line-height: 1.5;
-  font-size: 20px;
+  font-size: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '20px' : '16px'};
 `
 
 export const Explanation = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
-    <StyledExplanation>
-      <Header>
-        <Company>
-          STEELROCK Family Office
-        </Company>
-        <About>
-          - About
-        </About>
-      </Header>
+    <StyledExplanation isDesktopOrLaptop={isDesktopOrLaptop}>
+      <Company>
+        STEELROCK Family Office
+      </Company>
       <TextWrapper>
         <Text>
           <FormattedMessage id = "home.explanation" />

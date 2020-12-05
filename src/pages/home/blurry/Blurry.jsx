@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
+import { useMediaQuery } from 'react-responsive'
 
 import BlurryImg from '../../../images/hamburg.jpg'
 
@@ -15,7 +16,7 @@ const StyledGallery = styled.div`
 
 const Left = styled.div`
   color: white;
-  width: 50%;
+  width: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '50%' : '100%'};
   background-color: rgb(8,61,119, 0.7);
   height: 100%;
   display: flex;
@@ -41,9 +42,13 @@ const StyledIcon = styled.div`
 `
 
 export const Blurry = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
     <StyledGallery>
-      <Left>
+      <Left isDesktopOrLaptop={isDesktopOrLaptop}>
         <IconWrapper>
           <StyledIcon>
             icon

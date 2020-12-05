@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
+import { useMediaQuery } from 'react-responsive'
 
 const StyledFooter = styled.div`
   background-color: black;
   color: white;
   display: flex;
+  flex-direction: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? 'row' : 'column'};
   align-items: center;
 `
 
@@ -60,8 +62,12 @@ const Email = styled.a`
 `
 
 export const Footer = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
-    <StyledFooter>
+    <StyledFooter isDesktopOrLaptop={isDesktopOrLaptop}>
       <Left>
         <Company>
           <div>
