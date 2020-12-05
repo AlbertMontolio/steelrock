@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl'
+
 import PhotovoltaicImg from '../../images/photovoltaic.jpg'
 
 const StyledRenewableEnergy = styled.div`
@@ -43,7 +45,7 @@ export const RenewableEnergy = () => {
             Name Company
           </CompanyWrapper>
           <Text>
-            Due to the 100 percent stake in the Milvio Energy Group, the family office is invested in renewable energies. With this investment the investors commit themselves to a sustainable strategy. Renewable energy sources are particularly interesting because of their secure returns and the increasing demand for ecological electricity. Milvio deals with photovoltaic roof plants, photovoltaic ground field plant and wind power plants regardless of their size.
+            <FormattedMessage id = "renewableEnergy.text" />
           </Text>
         </GrayBox>
       </StyledBanner>

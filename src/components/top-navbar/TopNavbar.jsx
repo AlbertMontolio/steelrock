@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { FormattedMessage } from 'react-intl'
+
+import { useLang } from '../../providers/language-provider/LanguageProvider'
 
 import { routes } from '../../config'
 
@@ -27,7 +30,14 @@ const Link = styled(NavLink)`
   text-decoration: none;
 `
 
+const Language = styled.div`
+  margin-left: 20px;
+  font-size: 16px;
+`
+
 export const TopNavbar = () => {
+  const { locale, setLocale } = useLang()
+  console.log('TopNavbar lang', locale)
   return (
     <StyledTopNavbar>
       <IconWrapper>
@@ -35,14 +45,20 @@ export const TopNavbar = () => {
       </IconWrapper>
       <Links>
         <Link to='/'>
-          Home
+          <FormattedMessage id = "topNavbar.home" />
         </Link>
         <Link to={routes.realState}>
-          Real State
+          <FormattedMessage id = "topNavbar.realState" />
         </Link>
         <Link to={routes.renewableEnergy}>
-          Renewable Energy
+          <FormattedMessage id = "topNavbar.renewableEnergy" />
         </Link>
+        <Language onClick={() => setLocale('en-EN')}>
+          English
+        </Language>
+        <Language onClick={() => setLocale('de-DE')}>
+          German
+        </Language>
       </Links>
     </StyledTopNavbar>
   )

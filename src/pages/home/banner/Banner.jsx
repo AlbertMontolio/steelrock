@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl'
 
 import SolarImg from '../../../images/banner.jpg'
 
@@ -23,7 +24,7 @@ export const Banner = () => {
   return (
     <StyledBanner>
       <StyledText>
-        Investing in a sustainable future for the next generations.
+        <FormattedMessage id = "home.banner" />
       </StyledText>
     </StyledBanner>
   )

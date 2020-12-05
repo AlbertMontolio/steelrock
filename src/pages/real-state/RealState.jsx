@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CraneImg from '../../images/crane.jpg'
+import { FormattedMessage } from 'react-intl'
 
 const StyledRealState = styled.div`
 `
@@ -46,20 +47,7 @@ export const RealState = () => {
             Name company
           </NameCompany>
           <Text>
-          Due to the 100 percent
-          stake in the Connaught
-          Capital Group, the family 
-          office is significantly invested in
-          real estate development and 
-          management. In the past years the
-          focus of the company was on the
-          construction of residential properties in
-          Northern Germany. The real estate types are
-          diverse, ranging from terraced houses, micro
-          apartments to vacation homes. Connaught has
-          been able to position itself through various projects 
-          such as hotels or gas stations with connected
-          gastronomy along freeways across Europe.
+            <FormattedMessage id = "realState.text" />
           </Text>
         </Content>
 

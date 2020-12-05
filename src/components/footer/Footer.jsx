@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl'
 
 const StyledFooter = styled.div`
   background-color: black;
@@ -90,7 +91,7 @@ export const Footer = () => {
       <Right>
         <SendMessageWrapper>
           <SendMessage>
-            Send us a message:
+            <FormattedMessage id = "footer.sendUs" />
           </SendMessage>
           <Email href="mailto:info@steelrock.de">
             info@steelrock.de

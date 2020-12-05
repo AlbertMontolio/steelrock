@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl'
 
 import BlurryImg from '../../../images/hamburg.jpg'
 
@@ -49,7 +50,7 @@ export const Blurry = () => {
           </StyledIcon>
         </IconWrapper>
         <StyledText>
-          Our company convinces with many years of experience in real estate investment, key knowledge in the photovoltaic industry and identifying new investment opportunities for further value development.
+          <FormattedMessage id = "home.blurry" />
         </StyledText>
       </Left>
     </StyledGallery>
