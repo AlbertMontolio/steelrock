@@ -49,7 +49,6 @@ export const Explanation = () => {
       <TextWrapper>
         <Text>
           <FormattedMessage id = "home.explanation" />
-          Our core shareholdings are in conservative companies in sectors such as real estate development, real estate management and the development and management of power plants driven by renewable energies. We do not shy away from new concepts and emerging markets! While we dive deeper and deeper into the world of cryptocurrencies, we support our own start-up ideas as well as new founders in their efforts with experience and financial means. 
         </Text>
       </TextWrapper>
     </StyledExplanation>
