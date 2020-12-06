@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CraneImg from '../../images/crane.jpg'
 import { FormattedMessage } from 'react-intl'
+import { useMediaQuery } from 'react-responsive'
 
 const StyledRealState = styled.div`
 `
@@ -12,16 +13,15 @@ const StyledBanner = styled.div`
   background-size: cover;
 
   width: 100%;
-  height: calc(90vh - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '60px 0px' : '60px 20px'};
   box-sizing: border-box;
 `
 
 const Content = styled.div`
-
+  width: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '400px' : '100%'};
 `
 
 const Text = styled.div`
@@ -39,18 +39,21 @@ const NameCompany = styled.div`
 `
 
 export const RealState = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
     <StyledRealState>
       <StyledBanner>
-        <Content>
+        <Content isDesktopOrLaptop={isDesktopOrLaptop}>
           <NameCompany>
-            Name company
+          <FormattedMessage id = "topNavbar.realState" />
           </NameCompany>
           <Text>
             <FormattedMessage id = "realState.text" />
           </Text>
         </Content>
-
       </StyledBanner>
     </StyledRealState>
   )
