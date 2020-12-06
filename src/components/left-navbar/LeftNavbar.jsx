@@ -65,7 +65,10 @@ const StyledLanguage = styled.img`
 `
 
 const StyledLink = styled(NavLink)`
-
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const StyledLogo = styled.img`
