@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 
 import PhotovoltaicImg from '../../images/photovoltaic.jpg'
+import MilvioLogo from '../../images/milvio.png'
 
 const StyledRenewableEnergy = styled.div`
 `
@@ -26,14 +27,18 @@ const GrayBox = styled.div`
   padding: 40px 20px;
 `
 
-const CompanyWrapper = styled.div`
-  font-weight: bold;
-  font-size: 30px;
-`
-
 const Text = styled.div`
   line-height: 1.5;
   margin-top: 20px;
+`
+const MilvioWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const StyledMilvio = styled.img`
+  height: 50px;
 `
 
 export const RenewableEnergy = () => {
@@ -41,9 +46,9 @@ export const RenewableEnergy = () => {
     <StyledRenewableEnergy>
       <StyledBanner>
         <GrayBox>
-          <CompanyWrapper>
-            Name Company
-          </CompanyWrapper>
+          <MilvioWrapper>
+            <StyledMilvio src={MilvioLogo} />
+          </MilvioWrapper>
           <Text>
             <FormattedMessage id = "renewableEnergy.text" />
           </Text>
