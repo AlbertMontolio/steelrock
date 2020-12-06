@@ -11,20 +11,19 @@ import EnglishLogo from '../../images/english_icon.png'
 import { routes } from '../../config'
 
 const StyledTopNavbar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right :30px;
-  height: 60px;
+  width: 100%
 `
 
 const Links = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 15px;
 `
 
 const Link = styled(NavLink)`
-  margin-left: 30px;
   color: black;
   text-decoration: none;
   &:hover {
@@ -32,17 +31,13 @@ const Link = styled(NavLink)`
   }
 `
 
-const Language = styled.div`
-  margin-left: 20px;
-  font-size: 14px;
-  &:hover {
-    cursor: pointer;
-    color: rgb(150,150,150);
-  }
-`
-
-const LinkLogo = styled(NavLink)`
-
+const LogoLine = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
 `
 
 const StyledLogo = styled.img`
@@ -51,6 +46,13 @@ const StyledLogo = styled.img`
 
 const Languages = styled.div`
   margin-left: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
 `
 
 const StyledLanguage = styled.img`
@@ -61,26 +63,20 @@ const StyledLanguage = styled.img`
   }
 `
 
+const Separator = styled.div`
+  border-left: 1px solid black;
+  height: 15px;
+  margin: 0px 30px;
+`
+
 export const TopNavbar = () => {
   const { setLocale } = useLang()
   return (
     <StyledTopNavbar>
-      <NavLink to='/'>
-        <StyledLogo src={SteelrockLogo} />
-      </NavLink>
-      <Links>
-        <Link to='/'>
-          <FormattedMessage id = "topNavbar.home" />
-        </Link>
-        <Link to={routes.realState}>
-          <FormattedMessage id = "topNavbar.realState" />
-        </Link>
-        <Link to={routes.renewableEnergy}>
-          <FormattedMessage id = "topNavbar.renewableEnergy" />
-        </Link>
-        <Link to={routes.contact}>
-          <FormattedMessage id = "topNavbar.contact" />
-        </Link>
+      <LogoLine>
+        <NavLink to='/'>
+          <StyledLogo src={SteelrockLogo} />
+        </NavLink>
         <Languages>
           <StyledLanguage
             onClick={() => setLocale('de-DE')}
@@ -91,6 +87,23 @@ export const TopNavbar = () => {
             src={EnglishLogo} 
           />
         </Languages>
+      </LogoLine>
+      <Links>
+        <Link to='/'>
+          <FormattedMessage id = "topNavbar.home" />
+        </Link>
+        <Separator />
+        <Link to={routes.realState}>
+          <FormattedMessage id = "topNavbar.realState" />
+        </Link>
+        <Separator />
+        <Link to={routes.renewableEnergy}>
+          <FormattedMessage id = "topNavbar.renewableEnergy" />
+        </Link>
+        <Separator />
+        <Link to={routes.contact}>
+          <FormattedMessage id = "topNavbar.contact" />
+        </Link>
       </Links>
     </StyledTopNavbar>
   )
