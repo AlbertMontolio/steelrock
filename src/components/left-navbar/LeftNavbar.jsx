@@ -34,6 +34,8 @@ const Link = styled(NavLink)`
   text-decoration: none;
   margin: 5px 0px;
   width: 100%;
+  height: 100%;
+  padding: 10px 20px;
 `
 
 const Language = styled.div`
@@ -93,6 +95,12 @@ const StyledMenuIcon = styled.div`
   align--items: center;
 `
 
+const StyledList = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
+`
+
 export const LeftNavbar = () => {
   const { setLocale } = useLang()
   const classes = useStyles();
@@ -120,28 +128,20 @@ export const LeftNavbar = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        <ListItem button key='home'>
-          <Link to='/'>
-            <FormattedMessage id = "topNavbar.home" />
-          </Link>
-        </ListItem>
-        <ListItem button key='real-state'>
-          <Link to={routes.realState}>
-            <FormattedMessage id = "topNavbar.realState" />
-          </Link>
-        </ListItem>
-        <ListItem button key='renewable-energy'>
-          <Link to={routes.renewableEnergy}>
-            <FormattedMessage id = "topNavbar.renewableEnergy" />
-          </Link>
-        </ListItem>
-        <ListItem button key='contact'>
-          <Link to={routes.contact}>
-            <FormattedMessage id = "topNavbar.contact" />
-          </Link>
-        </ListItem>
-      </List>
+      <StyledList>
+        <Link to='/'>
+          <FormattedMessage id = "topNavbar.home" />
+        </Link>
+        <Link to={routes.realState}>
+          <FormattedMessage id = "topNavbar.realState" />
+        </Link>
+        <Link to={routes.renewableEnergy}>
+          <FormattedMessage id = "topNavbar.renewableEnergy" />
+        </Link>
+        <Link to={routes.contact}>
+          <FormattedMessage id = "topNavbar.contact" />
+        </Link>
+      </StyledList>
       <Divider />
       <Languages>
         <StyledLanguage

@@ -6,6 +6,8 @@ import { useMediaQuery } from 'react-responsive'
 import BlurryDesktopImg from '../../../images/hamburg.jpg'
 import BlurryMobileImg from '../../../images/hamburg_vertical.jpg'
 
+import { SquareLogo } from '../../../components/square-logo/SquareLogo'
+
 const StyledGallery = styled.div`
   display: flex;
   align-items: center;
@@ -51,9 +53,7 @@ export const Blurry = () => {
     <StyledGallery isDesktopOrLaptop={isDesktopOrLaptop}>
       <Left isDesktopOrLaptop={isDesktopOrLaptop}>
         <IconWrapper>
-          <StyledIcon>
-            icon
-          </StyledIcon>
+          <SquareLogo />
         </IconWrapper>
         <StyledText>
           <FormattedMessage id = "home.blurry" />

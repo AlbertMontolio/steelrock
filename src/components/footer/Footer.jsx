@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import { useMediaQuery } from 'react-responsive'
 
+import { SquareLogo } from '../../components/square-logo/SquareLogo'
+
 const StyledFooter = styled.div`
   background-color: black;
   color: white;
@@ -30,7 +32,7 @@ const Company = styled.div`
 
 const Name = styled.div`
   font-size: 18px;
-  margin-left: 20px;
+  margin-left: 10px;
 `
 
 const AddressWrapper = styled.div`
@@ -67,10 +69,13 @@ export const Footer = () => {
     query: '(min-width: 1224px)'
   })
 
+  const logoSize = isDesktopOrLaptop ? '16px' : '22px'
+
   return (
     <StyledFooter isDesktopOrLaptop={isDesktopOrLaptop}>
       <Left>
         <Company>
+          <SquareLogo size={logoSize} />
           <Name>
             STEELROCK Family Office
           </Name>

@@ -21,16 +21,28 @@ const Text = styled.div`
   font-size: 20px;
 `
 
-const Email = styled.div`
-  font-weight: bold;
-  font-size: 30px;
+const EmailWrapper = styled.div`
   margin-top: 20px;
 `
 
-const Phone = styled.div`
+const Email = styled.a`
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+`
+
+const StyledPhone = styled.div`
+  margin-top: 20px;
+  color: black;
+`
+
+const Phone = styled.a`
   font-weight: bold;
   font-size: 23px;
   margin-top: 20px;
+  color: black;
+  text-decoration: none;
 `
 
 const AddressWrapper = styled.div`
@@ -53,12 +65,16 @@ export const Contact = () => {
         <Text>
           <FormattedMessage id = "contact.text" />
         </Text>
-        <Email>
-          info@steelrock.de
-        </Email>
-        <Phone>
-          +49 (0) 40 300882223
-        </Phone>
+        <EmailWrapper>
+          <Email href="mailto:info@steelrock.de">
+            info@steelrock.de
+          </Email>
+        </EmailWrapper>
+        <StyledPhone>
+          <Phone href="tel:+49040300882223">
+            +49 (0) 40 300882223
+          </Phone>
+        </StyledPhone>
         <AddressWrapper>
           <AddressItem>
             Borselstraße 16a 
