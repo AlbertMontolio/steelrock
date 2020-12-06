@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import { useMediaQuery } from 'react-responsive'
 
-import { SquareLogo } from '../../components/square-logo/SquareLogo'
-
 const StyledFooter = styled.div`
   background-color: black;
   color: white;
