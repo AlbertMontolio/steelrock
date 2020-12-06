@@ -20,6 +20,7 @@ const Left = styled(Block)`
 `
 
 const Right = styled(Block)`
+  padding-top: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '80px' : '0px'};
 `
 
 const Company = styled.div`
@@ -94,7 +95,7 @@ export const Footer = () => {
           </PhoneItem>
         </PhoneWrapper>
       </Left>
-      <Right>
+      <Right isDesktopOrLaptop={isDesktopOrLaptop}>
         <SendMessageWrapper>
           <SendMessage>
             <FormattedMessage id = "footer.sendUs" />

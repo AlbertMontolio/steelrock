@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl'
 
 import { useLang } from '../../providers/language-provider/LanguageProvider'
+import SteelrockLogo from '../../images/steel_rock_jpg.jpg'
+import GermanLogo from '../../images/german_icon.png'
+import EnglishLogo from '../../images/english_icon.png'
 
 import { routes } from '../../config'
 
@@ -11,11 +14,8 @@ const StyledTopNavbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 30px;
+  padding-right :30px;
   height: 60px;
-`
-
-const IconWrapper = styled.div`
 `
 
 const Links = styled.div`
@@ -27,21 +27,41 @@ const Link = styled(NavLink)`
   margin-left: 30px;
   color: black;
   text-decoration: none;
+  &:hover {
+    color: rgb(150,150,150);
+  }
 `
 
 const Language = styled.div`
   margin-left: 20px;
-  font-size: 16px;
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+    color: rgb(150,150,150);
+  }
+`
+
+const StyledLogo = styled.img`
+  height: 40px;
+`
+
+const Languages = styled.div`
+  margin-left: 20px;
+`
+
+const StyledLanguage = styled.img`
+  height: 20px;
+  margin-left: 10px;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const TopNavbar = () => {
   const { setLocale } = useLang()
   return (
     <StyledTopNavbar>
-      
-      <IconWrapper>
-        icon
-      </IconWrapper>
+      <StyledLogo src={SteelrockLogo} />
       <Links>
         <Link to='/'>
           <FormattedMessage id = "topNavbar.home" />
@@ -52,12 +72,16 @@ export const TopNavbar = () => {
         <Link to={routes.renewableEnergy}>
           <FormattedMessage id = "topNavbar.renewableEnergy" />
         </Link>
-        <Language onClick={() => setLocale('en-EN')}>
-          English
-        </Language>
-        <Language onClick={() => setLocale('de-DE')}>
-          German
-        </Language>
+        <Languages>
+          <StyledLanguage
+            onClick={() => setLocale('de-DE')}
+            src={GermanLogo} 
+          />
+          <StyledLanguage 
+            onClick={() => setLocale('en-EN')}
+            src={EnglishLogo} 
+          />
+        </Languages>
       </Links>
     </StyledTopNavbar>
   )

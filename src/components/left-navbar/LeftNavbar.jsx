@@ -13,6 +13,9 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 
+import GermanLogo from '../../images/german_icon.png'
+import EnglishLogo from '../../images/english_icon.png'
+
 import { routes } from '../../config'
 import { useLang } from '../../providers/language-provider/LanguageProvider'
 
@@ -29,12 +32,36 @@ const Link = styled(NavLink)`
   color: black;
   text-decoration: none;
   margin: 5px 0px;
+  width: 100%;
 `
 
 const Language = styled.div`
   margin: 20px 0px;
   margin-left: 18px;
   font-size: 16px;
+`
+
+const LogoWrapper = styled.div`
+  height: 40px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const Languages = styled.div`
+  margin-to: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const StyledLanguage = styled.img`
+  height: 30px;
+  margin: 30px;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const LeftNavbar = () => {
@@ -82,12 +109,16 @@ export const LeftNavbar = () => {
         </ListItem>
       </List>
       <Divider />
-      <Language onClick={() => setLocale('en-EN')}>
-        English
-      </Language>
-      <Language onClick={() => setLocale('de-DE')}>
-        German
-      </Language>
+      <Languages>
+        <StyledLanguage
+          onClick={() => setLocale('de-DE')}
+          src={GermanLogo} 
+        />
+        <StyledLanguage 
+          onClick={() => setLocale('en-EN')}
+          src={EnglishLogo} 
+        />
+      </Languages>
     </div>
   );
 
@@ -95,9 +126,11 @@ export const LeftNavbar = () => {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuIcon />
-          </Button>
+          <LogoWrapper>
+            <Button onClick={toggleDrawer(anchor, true)}>
+              <MenuIcon />
+            </Button>
+          </LogoWrapper>
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>

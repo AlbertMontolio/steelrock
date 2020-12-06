@@ -4,7 +4,8 @@ import { FormattedMessage } from 'react-intl'
 import { useMediaQuery } from 'react-responsive'
 
 const StyledExplanation = styled.div`
-  margin-bottom: 60px;
+  margin-top: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '40px' : '0px'};
+  margin-bottom: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '100px' : '60px'};
   padding: 0px ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '300px' : '20px'};
 `
 
@@ -38,7 +39,7 @@ export const Explanation = () => {
         STEELROCK Family Office
       </Company>
       <TextWrapper>
-        <Text>
+        <Text isDesktopOrLaptop={isDesktopOrLaptop}>
           <FormattedMessage id = "home.explanation" />
         </Text>
       </TextWrapper>
