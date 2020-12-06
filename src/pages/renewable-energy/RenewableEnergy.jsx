@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl'
 
 import PhotovoltaicImg from '../../images/photovoltaic.jpg'
 import MilvioLogo from '../../images/milvio.png'
+import { useMediaQuery } from 'react-responsive'
 
 const StyledRenewableEnergy = styled.div`
 `
@@ -38,16 +39,20 @@ const MilvioWrapper = styled.div`
   align-items: center;
 `
 const StyledMilvio = styled.img`
-  height: 50px;
+  height: ${({isDesktopOrLaptop}) => isDesktopOrLaptop ? '50px' : '40px'};
 `
 
 export const RenewableEnergy = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
     <StyledRenewableEnergy>
       <StyledBanner>
         <GrayBox>
           <MilvioWrapper>
-            <StyledMilvio src={MilvioLogo} />
+            <StyledMilvio isDesktopOrLaptop={isDesktopOrLaptop} src={MilvioLogo} />
           </MilvioWrapper>
           <Text>
             <FormattedMessage id = "renewableEnergy.text" />
