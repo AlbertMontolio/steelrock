@@ -1,5 +1,7 @@
 export const routes = {
   realState: '/real-state',
   renewableEnergy: '/renewable-energy',
-  contact: '/contact'
+  contact: '/contact',
+  impressum: '/impressum',
+  datenSchutz: '/daten-schutz'
 }

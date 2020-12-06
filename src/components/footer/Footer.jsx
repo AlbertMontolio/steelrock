@@ -2,8 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import { useMediaQuery } from 'react-responsive'
+import { NavLink } from 'react-router-dom'
 
 import { SquareLogo } from '../../components/square-logo/SquareLogo'
+
+import { routes } from '../../config'
 
 const StyledFooter = styled.div`
   background-color: black;
@@ -56,12 +59,27 @@ const SendMessageWrapper = styled.div`
 
 const SendMessage = styled.div`
   margin-bottom: 10px;
+  margin-top: 30px;
 `
 
 const Email = styled.a`
   font-size: 20px;
   font-weight: bold;
   color: white;
+`
+
+const  StyledLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const StyledLink = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  &:hover {
+    color: rgb(150,150,150);
+  }
 `
 
 export const Footer = () => {
@@ -99,6 +117,14 @@ export const Footer = () => {
       </Left>
       <Right isDesktopOrLaptop={isDesktopOrLaptop}>
         <SendMessageWrapper>
+          <StyledLinks>
+            <StyledLink to={routes.impressum}>
+              Impressum
+            </StyledLink>
+            <StyledLink to={routes.datenSchutz}>
+              Datenschutz
+            </StyledLink>
+          </StyledLinks>
           <SendMessage>
             <FormattedMessage id = "footer.sendUs" />
           </SendMessage>
