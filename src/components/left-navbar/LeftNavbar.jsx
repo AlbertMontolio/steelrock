@@ -136,6 +136,11 @@ export const LeftNavbar = () => {
             <FormattedMessage id = "topNavbar.renewableEnergy" />
           </Link>
         </ListItem>
+        <ListItem button key='contact'>
+          <Link to={routes.contact}>
+            <FormattedMessage id = "topNavbar.contact" />
+          </Link>
+        </ListItem>
       </List>
       <Divider />
       <Languages>

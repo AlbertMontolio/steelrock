@@ -1,4 +1,5 @@
 export const routes = {
   realState: '/real-state',
-  renewableEnergy: '/renewable-energy'
+  renewableEnergy: '/renewable-energy',
+  contact: '/contact'
 }

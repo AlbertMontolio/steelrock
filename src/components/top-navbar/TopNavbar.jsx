@@ -41,6 +41,10 @@ const Language = styled.div`
   }
 `
 
+const LinkLogo = styled(NavLink)`
+
+`
+
 const StyledLogo = styled.img`
   height: 40px;
 `
@@ -61,7 +65,9 @@ export const TopNavbar = () => {
   const { setLocale } = useLang()
   return (
     <StyledTopNavbar>
-      <StyledLogo src={SteelrockLogo} />
+      <NavLink to='/'>
+        <StyledLogo src={SteelrockLogo} />
+      </NavLink>
       <Links>
         <Link to='/'>
           <FormattedMessage id = "topNavbar.home" />
@@ -71,6 +77,9 @@ export const TopNavbar = () => {
         </Link>
         <Link to={routes.renewableEnergy}>
           <FormattedMessage id = "topNavbar.renewableEnergy" />
+        </Link>
+        <Link to={routes.contact}>
+          <FormattedMessage id = "topNavbar.contact" />
         </Link>
         <Languages>
           <StyledLanguage
