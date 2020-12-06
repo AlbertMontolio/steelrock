@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl'
@@ -23,9 +23,13 @@ const Links = styled.div`
   padding-bottom: 15px;
 `
 
+const LinkWrapper = styled.div`
+  color: ${({isActive}) => isActive ? '#00adff' : 'black'};
+`
+
 const Link = styled(NavLink)`
-  color: black;
   text-decoration: none;
+  color: inherit;
   &:hover {
     color: rgb(150,150,150);
   }
@@ -71,6 +75,11 @@ const Separator = styled.div`
 
 export const TopNavbar = () => {
   const { setLocale } = useLang()
+
+  const [activeUrl, setActiveUrl] = useState(window.location.pathname)
+
+  console.log('activeUrl', activeUrl)
+
   return (
     <StyledTopNavbar>
       <LogoLine>
@@ -89,21 +98,41 @@ export const TopNavbar = () => {
         </Languages>
       </LogoLine>
       <Links>
-        <Link to='/'>
-          <FormattedMessage id = "topNavbar.home" />
-        </Link>
+        <LinkWrapper isActive={activeUrl==='/'}>
+          <Link 
+            to='/' 
+            onClick={() => setActiveUrl('/')}
+          >
+            <FormattedMessage id = "topNavbar.home" />
+          </Link>
+        </LinkWrapper>
         <Separator />
-        <Link to={routes.realState}>
-          <FormattedMessage id = "topNavbar.realState" />
-        </Link>
+        <LinkWrapper isActive={activeUrl==='/real-state'}>
+          <Link
+            to={routes.realState} 
+            onClick={() => setActiveUrl('/real-state')}
+          >
+            <FormattedMessage id = "topNavbar.realState" />
+          </Link>
+        </LinkWrapper>
         <Separator />
-        <Link to={routes.renewableEnergy}>
-          <FormattedMessage id = "topNavbar.renewableEnergy" />
-        </Link>
+        <LinkWrapper isActive={activeUrl==='/renewable-energy'}>
+          <Link 
+            to={routes.renewableEnergy} 
+            onClick={() => setActiveUrl('/renewable-energy')}
+          >
+            <FormattedMessage id = "topNavbar.renewableEnergy" />
+          </Link>
+        </LinkWrapper>
         <Separator />
-        <Link to={routes.contact}>
-          <FormattedMessage id = "topNavbar.contact" />
-        </Link>
+        <LinkWrapper isActive={activeUrl==='/contact'}>
+          <Link 
+            to={routes.contact} 
+            onClick={() => setActiveUrl('/contact')}
+          >
+            <FormattedMessage id = "topNavbar.contact" />
+          </Link>
+        </LinkWrapper>
       </Links>
     </StyledTopNavbar>
   )
