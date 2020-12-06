@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import { useMediaQuery } from 'react-responsive'
 
-import BlurryImg from '../../../images/hamburg.jpg'
+import BlurryDesktopImg from '../../../images/hamburg.jpg'
+import BlurryMobileImg from '../../../images/hamburg_vertical.jpg'
 
 const StyledGallery = styled.div`
   display: flex;
   align-items: center;
-  background-image: url(${BlurryImg});
+  background-image: url(${({isDesktopOrLaptop}) => isDesktopOrLaptop ? BlurryDesktopImg : BlurryMobileImg});
   background-size: 100% auto;
   height: 80vh;
   position: relative;
@@ -47,7 +48,7 @@ export const Blurry = () => {
   })
 
   return (
-    <StyledGallery>
+    <StyledGallery isDesktopOrLaptop={isDesktopOrLaptop}>
       <Left isDesktopOrLaptop={isDesktopOrLaptop}>
         <IconWrapper>
           <StyledIcon>
