@@ -64,8 +64,12 @@ const StyledLanguage = styled.img`
   }
 `
 
+const StyledLink = styled(NavLink)`
+
+`
+
 const StyledLogo = styled.img`
-  height: 30px;
+  height: 38px;
 `
 
 const StyledLeftNavbar = styled.div`
@@ -158,7 +162,9 @@ export const LeftNavbar = () => {
           </Drawer>
         </StyledMenuIcon>
       ))}
-      <StyledLogo src={SteelrockLogo} />
+      <StyledLink to='/'>
+        <StyledLogo src={SteelrockLogo} />
+      </StyledLink>
     </StyledLeftNavbar>
   );
 }
