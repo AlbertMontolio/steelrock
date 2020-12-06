@@ -1,5 +1,6 @@
 import React from  'react'
 import styled from 'styled-components'
+import { useMediaQuery } from 'react-responsive'
 
 const Title = styled.div`
   font-weight: bold;
@@ -20,8 +21,12 @@ const StyledImpressum = styled.div`
 
 
 export const Impressum = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
-    <StyledImpressum>
+    <StyledImpressum isDesktopOrLaptop={isDesktopOrLaptop}>
       <Title>
         Impressum
       </Title>
