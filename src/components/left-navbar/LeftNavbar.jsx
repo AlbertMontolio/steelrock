@@ -15,6 +15,7 @@ import { FormattedMessage } from 'react-intl'
 
 import GermanLogo from '../../images/german_icon.png'
 import EnglishLogo from '../../images/english_icon.png'
+import SteelrockLogo from '../../images/steel_rock_jpg.jpg'
 
 import { routes } from '../../config'
 import { useLang } from '../../providers/language-provider/LanguageProvider'
@@ -42,7 +43,6 @@ const Language = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  height: 40px;
   width: 60px;
   display: flex;
   justify-content: center;
@@ -62,6 +62,28 @@ const StyledLanguage = styled.img`
   &:hover {
     cursor: pointer;
   }
+`
+
+const StyledLogo = styled.img`
+  height: 30px;
+`
+
+const StyledLeftNavbar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+`
+
+const StyledMenuIcon = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align--items: center;
 `
 
 export const LeftNavbar = () => {
@@ -123,9 +145,9 @@ export const LeftNavbar = () => {
   );
 
   return (
-    <div>
+    <StyledLeftNavbar>
       {['left'].map((anchor) => (
-        <React.Fragment key={anchor}>
+        <StyledMenuIcon key={anchor}>
           <LogoWrapper>
             <Button onClick={toggleDrawer(anchor, true)}>
               <MenuIcon />
@@ -134,8 +156,9 @@ export const LeftNavbar = () => {
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>
-        </React.Fragment>
+        </StyledMenuIcon>
       ))}
-    </div>
+      <StyledLogo src={SteelrockLogo} />
+    </StyledLeftNavbar>
   );
 }
