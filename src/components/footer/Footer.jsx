@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import { useMediaQuery } from 'react-responsive'
 
+import { SquareLogo } from '../../components/square-logo/SquareLogo'
+
 const StyledFooter = styled.div`
   background-color: black;
   color: white;
@@ -71,9 +73,6 @@ export const Footer = () => {
     <StyledFooter isDesktopOrLaptop={isDesktopOrLaptop}>
       <Left>
         <Company>
-          <div>
-            icon
-          </div>
           <Name>
             STEELROCK Family Office
           </Name>

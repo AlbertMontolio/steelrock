@@ -32,7 +32,7 @@ const Text = styled.div`
   line-height: 1.5;
   margin-top: 20px;
 `
-const MilvioWrapper = styled.div`
+const MilvioWrapper = styled.a`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@ export const RenewableEnergy = () => {
     <StyledRenewableEnergy>
       <StyledBanner>
         <GrayBox>
-          <MilvioWrapper>
+          <MilvioWrapper href='https://www.milv.io' target="_blank">
             <StyledMilvio isDesktopOrLaptop={isDesktopOrLaptop} src={MilvioLogo} />
           </MilvioWrapper>
           <Text>
